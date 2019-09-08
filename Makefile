@@ -10,7 +10,7 @@ clean:
 	rm -r build
 
 watch:
-	./watch.sh
+	while true; do find site/ templates/ plugins/ soupault.conf | entr -cd make build; test $? -gt 128 && break; done
 
 server: build
 	cd build; python3 -m http.server

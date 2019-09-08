@@ -1,0 +1,120 @@
+@import url('https://rsms.me/inter/inter.css');
+@supports (font-variation-settings: normal) {
+    html {
+        font-family: 'Inter var', sans-serif;
+    }
+}
+html {
+    font-family: 'Inter', sans-serif;
+}
+
+html {
+    font-size: 1.0em;
+}
+
+#content {
+    margin: auto;
+    max-width: 700px;
+}
+
+#header {
+    max-width: 500px;
+    margin: 2% auto;
+    padding: 0.5%;
+    overflow: auto;
+    display: flex;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    font-size: 1.2em
+}
+
+img#logo {
+    max-width: 50px;
+    max-height: 50px;
+    margin: 0 2%;
+}
+
+#navigation {
+    margin: auto 0;
+    display: flex;
+    flex: 1;
+}
+
+#navigation .navbar-item {
+    padding: 5px;
+    flex: 1;
+    text-align: center;
+}
+
+#navigation a {
+    color: inherit;
+}
+
+.navbar-item a:visited {
+    text-decoration: overline;
+}
+
+.navbar-item a:link {
+    text-decoration: none;
+}
+
+.navbar-item a:hover {
+    text-decoration: underline;
+}
+
+.navbar-item a:active {
+    text-decoration: none;
+}
+
+.nav-active {
+    border: 1px solid black;
+}
+
+#about {
+    display: flex;
+}
+
+#portrait {
+    margin: 0% 2%;
+}
+
+@media screen and (max-width: 600px) {
+
+    #header {
+        flex-direction: column;
+    }
+
+    #navigation {
+        flex-direction: column;
+    }
+
+    img#logo {
+        margin: 2% auto;
+        flow: 1;
+    }
+
+    #about {
+        flex-direction: column;
+    }
+
+    #portrait {
+        margin: 0 auto;
+        /* flex: 1; */
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        background: #121212;
+        color: white;
+    }
+
+    #header {
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+    }
+
+    .nav-active {
+        border: 1px solid white;
+    }
+}
