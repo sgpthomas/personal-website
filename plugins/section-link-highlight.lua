@@ -12,14 +12,13 @@ index, elem = next(elems)
 while index do
   link = HTML.select_one(elem, "a")
   href = strlower(HTML.get_attribute(link, "href"))
-  -- Don't highlight the main page
-  -- That would also highlight all paths since they all have / in them
+
   if href ~= "/" then
     if Regex.match(page_file, href) then
       HTML.add_class(elem, active_link_class)
     end
   else
-    if Regex.match(page_file, "index.html") then
+    if Regex.match(page_file, "site/index.html") then
       HTML.add_class(elem, active_link_class)
     end
   end
