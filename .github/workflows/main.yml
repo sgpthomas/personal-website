@@ -19,4 +19,5 @@ jobs:
           cd ~/personal-website
           git pull
           make clean
-          $SOUP_BIN
+          make build SOUPAULT=$SOUP_BIN
+          echo $(whoami) $(date)
