@@ -8,8 +8,6 @@ jobs:
     steps:
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@master
-      env:
-        SOUP_BIN: "~/.opam/default/bin/soupault"
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
@@ -19,7 +17,4 @@ jobs:
           cd ~/personal-website
           git pull
           make clean
-          echo $SOUP_BIN
-          make SOUPAULT=$SOUP_BIN build -B
-          date
-          make -v
+          make SOUPAULT=~/.opam/default/bin/soupault build
