@@ -1,7 +1,9 @@
 .PHONY: build open clean watch server
 
+SOUPAULT=soupault
+
 build:
-	soupault
+	$(SOUPAULT)
 
 open: build
 	xdg-open build/index.html
