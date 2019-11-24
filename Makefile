@@ -3,9 +3,6 @@
 build:
 	soupault
 
-deploy:
-	./deploy.sh
-
 open: build
 	xdg-open build/index.html
 
