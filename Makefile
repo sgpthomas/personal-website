@@ -5,6 +5,9 @@ SOUPAULT=soupault
 build:
 	$(SOUPAULT)
 
+clean:
+	rm -rf build
+
 open: build
 	xdg-open build/index.html
 
