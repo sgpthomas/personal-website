@@ -19,4 +19,4 @@ jobs:
           cd ~/personal-website
           git pull
           make clean
-          make build SOUPAULT=$SOUP_BIN
+          make build -B SOUPAULT=$SOUP_BIN
