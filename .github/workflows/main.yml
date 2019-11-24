@@ -19,7 +19,7 @@ jobs:
           cd ~/personal-website
           git pull
           make clean
-          make build SOUPAULT=$SOUP_BIN -B
-          whoami
+          echo $SOUP_BIN
+          make SOUPAULT=$SOUP_BIN build -B
           date
           make -v
