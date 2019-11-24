@@ -9,7 +9,7 @@ jobs:
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@master
       env:
-        SOUPAULT: "~/.opam/default/bin/soupault"
+        SOUP_BIN: "~/.opam/default/bin/soupault"
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
@@ -17,6 +17,5 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd ~/personal-website
-          whoami
-          date > evidence
-          make
+          git pull
+          make SOUPAULT=$SOUP_BIN
