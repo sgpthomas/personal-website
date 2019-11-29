@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <head>
   <meta charset="utf-8" />
 $for(author-meta)$
@@ -28,9 +27,6 @@ $endfor$
 $if(math)$
   $math$
 $endif$
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 $for(header-includes)$
   $header-includes$
 $endfor$
