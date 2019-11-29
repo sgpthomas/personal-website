@@ -14,6 +14,11 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
+          cd ~/soupault
+          git pull
+          dune build
+          dune install
+          cd ..
           cd ~/personal-website
           git pull
           make clean
