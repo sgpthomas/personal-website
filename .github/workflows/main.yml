@@ -23,4 +23,4 @@ jobs:
           cd ~/personal-website
           git pull
           make clean
-          make SOUPAULT=~/.opam/default/bin/soupault build
+          make build
