@@ -13,22 +13,6 @@ html {
     background-color: var(--background-color);
 }
 
-#content {
-    margin: auto;
-    max-width: 700px;
-}
-
-#header {
-    max-width: 600px;
-    margin: 2% auto;
-    padding: 0.5%;
-    overflow: auto;
-    display: flex;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px dashed var(--border-color);
-    font-size: 1.2em
-}
-
 a, a:link, a:visited {
     color: var(--link-color);
 }
@@ -37,46 +21,9 @@ a:visited {
     text-decoration: none;
 }
 
-img#logo {
-    max-width: 50px;
-    max-height: 50px;
-    margin: 0 2%;
-}
-
-#navigation {
-    margin: auto 0;
-    display: flex;
-    flex: 1;
-}
-
-#navigation .navbar-item {
-    padding: 5px;
-    flex: 1;
-    text-align: center;
-}
-
-#navigation a {
-    color: inherit;
-}
-
-.navbar-item a:visited {
-    text-decoration: overline;
-}
-
-.navbar-item a:link {
-    text-decoration: none;
-}
-
-.navbar-item a:hover {
-    text-decoration: underline;
-}
-
-.navbar-item a:active {
-    text-decoration: none;
-}
-
-.nav-active {
-    border: 1px solid black;
+#content {
+    margin: auto;
+    max-width: 700px;
 }
 
 #about {
@@ -84,7 +31,8 @@ img#logo {
 }
 
 #portrait {
-    margin: 0% 2%;
+    clip-path: circle(50% at 50% 50%);
+    margin-right: 5%;
 }
 
 #name {
@@ -97,21 +45,11 @@ img#logo {
         flex-direction: column;
     }
 
-    #navigation {
-        flex-direction: column;
-    }
-
-    img#logo {
-        margin: 2% auto;
-        flow: 1;
-    }
-
     #about {
         flex-direction: column;
     }
 
     #portrait {
         margin: 0 auto;
-        /* flex: 1; */
     }
 }
