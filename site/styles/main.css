@@ -29,6 +29,14 @@ html {
     font-size: 1.2em
 }
 
+a, a:link, a:visited {
+    color: blue;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
 img#logo {
     max-width: 50px;
     max-height: 50px;
@@ -81,6 +89,20 @@ img#logo {
 
 #name {
     text-align: center;
+}
+
+.article {
+    /* border: 1px solid red; */
+    padding: 2% 0px;
+}
+
+.article a {
+    /* border: 0.2px dashed red; */
+    font-size: 1.3em;
+}
+
+.article+.article {
+    border-top: 1px solid black;
 }
 
 @media screen and (max-width: 600px) {

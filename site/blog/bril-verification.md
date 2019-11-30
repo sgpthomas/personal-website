@@ -1,5 +1,6 @@
 ---
-title:  'Verification for Bril'
+title: 'Shrimp: Verifying IRs with Rosette'
+date: 2019-09-25
 author:
 - Rachit Nagim
 - Samuel Thomas
