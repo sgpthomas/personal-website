@@ -1,16 +1,16 @@
 /* @import url('https://rsms.me/inter/inter.css'); */
-@supports (font-variation-settings: normal) {
+/* @supports (font-variation-settings: normal) {
     html {
-        /* font-family: 'Inter var', sans-serif; */
+        font-family: 'Inter var', sans-serif;
         font-family: grad, serif;
     }
-}
-html {
-    font-family: 'Inter', sans-serif;
-}
+} */
 
 html {
+    font-family: 'Inter', sans-serif;
     font-size: 1.0em;
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 #content {
@@ -24,13 +24,13 @@ html {
     padding: 0.5%;
     overflow: auto;
     display: flex;
-    border-top: 1px solid black;
-    border-bottom: 1px dashed gray;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px dashed var(--border-color);
     font-size: 1.2em
 }
 
 a, a:link, a:visited {
-    color: blue;
+    color: var(--link-color);
 }
 
 a:visited {
@@ -91,20 +91,6 @@ img#logo {
     text-align: center;
 }
 
-.article {
-    /* border: 1px solid red; */
-    padding: 2% 0px;
-}
-
-.article a {
-    /* border: 0.2px dashed red; */
-    font-size: 1.3em;
-}
-
-.article+.article {
-    border-top: 1px solid black;
-}
-
 @media screen and (max-width: 600px) {
 
     #header {
@@ -127,21 +113,5 @@ img#logo {
     #portrait {
         margin: 0 auto;
         /* flex: 1; */
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    html {
-        background: #121212;
-        color: white;
-    }
-
-    #header {
-        border-top: 1px solid white;
-        border-bottom: 1px dashed white;
-    }
-
-    .nav-active {
-        border: 1px solid white;
     }
 }

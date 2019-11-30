@@ -1,0 +1,15 @@
+:root {
+    --background-color: white;
+    --text-color: black;
+    --link-color: blue;
+    --border-color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #121212;
+        --text-color: white;
+        --link-color: lightblue;
+        --border-color: white;
+    }
+}
