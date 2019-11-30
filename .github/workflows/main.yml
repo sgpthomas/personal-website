@@ -14,6 +14,7 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
+          source ~/.zshrc
           cd ~/soupault
           git pull
           dune build
