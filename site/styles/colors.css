@@ -1,15 +1,19 @@
 :root {
     --background-color: white;
     --text-color: #001826;
+    --secondary-text-color: #5c6c74;
     --link-color: #0091c9;
     --border-color: #001826;
+    --code-bg-color: ##fbf8ef;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --background-color: #001826;
         --text-color: white;
+        --secondary-text-color: #d0d5d7;
         --link-color: #c297b8;
         --border-color: white;
+        --code-bg-color: ##292B2E;
     }
 }

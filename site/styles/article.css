@@ -8,5 +8,20 @@
 }
 
 .article + .article {
-  border-top: 1px solid var(--border-color);
+  border-top: 1px dashed var(--border-color);
+}
+
+/* comma separated lists */
+.comma:not(:last-of-type)::after {
+    content: ", ";
+}
+
+span.date {
+    margin: 0 2%;
+    color: var(--secondary-text-color);
+}
+
+.sourceCode {
+    bacgkround-color: var(--code-bg-color);
+    color: black;
 }

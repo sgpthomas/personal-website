@@ -1,58 +1,59 @@
 <head>
-  <meta charset="utf-8" />
-$for(author-meta)$
-  <meta name="author" content="$author-meta$" />
-$endfor$
-$if(date-meta)$
-  <meta name="dcterms.date" content="$date-meta$" />
-$endif$
-$if(keywords)$
-  <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
-$endif$
-  <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-$if(highlighting-css)$
-  <style type="text/css">
-$highlighting-css$
-  </style>
-$endif$
-$for(css)$
-  <link rel="stylesheet" href="$css$" />
-$endfor$
-$if(math)$
-  $math$
-$endif$
-$for(header-includes)$
-  $header-includes$
-$endfor$
+    <meta charset="utf-8" />
+    $for(author-meta)$
+    <meta name="author" content="$author-meta$" />
+    $endfor$
+    $if(date-meta)$
+    <meta name="dcterms.date" content="$date-meta$" />
+    $endif$
+    $if(keywords)$
+    <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
+    $endif$
+    <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+    <style type="text/css">
+     code{white-space: pre-wrap;}
+     span.smallcaps{font-variant: small-caps;}
+     span.underline{text-decoration: underline;}
+     div.column{display: inline-block; vertical-align: top; width: 50%;}
+    </style>
+    $if(highlighting-css)$
+    <style type="text/css">
+     $highlighting-css$
+    </style>
+    $endif$
+    $for(css)$
+    <link rel="stylesheet" href="$css$" />
+    $endfor$
+    $if(math)$
+    $math$
+    $endif$
+    $for(header-includes)$
+    $header-includes$
+    $endfor$
 </head>
 $for(include-before)$
 $include-before$
 $endfor$
 $if(title)$
 <header id="title-block-header">
-<h1 id="title" class="title">$title$</h1>
-$if(subtitle)$
-<p class="subtitle">$subtitle$</p>
-$endif$
-<div id="authors">
-$for(author)$
-<p class="author">$author$</p>
-$endfor$
-</div>
-$if(date)$
-<p id="date" class="date">$date$</p>
-$endif$
+    <h1 id="title" class="title">$title$</h1>
+    $if(subtitle)$
+    <p class="subtitle">$subtitle$</p>
+    $endif$
+    <span class="authors">
+        by
+        $for(author)$
+        <span class="author comma">$author$</span>
+        $endfor$
+    </span>
+    $if(date)$
+    <span id="date" class="date">$date$</span>
+    $endif$
 </header>
 $endif$
 $if(toc)$
 <nav id="$idprefix$TOC">
-$table-of-contents$
+    $table-of-contents$
 </nav>
 $endif$
 $body$

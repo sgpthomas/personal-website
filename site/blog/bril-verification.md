@@ -117,7 +117,7 @@ To verify that two basic blocks are equivalent, we assume that the common set of
 variables equal, and ask Rosette to verify that the symbolic formulas we get from interpretation for each
 assigned variable are equivalent.
 
-```
+```C
 block1 {
   ...
   sum1: int = add a b;
@@ -126,7 +126,7 @@ block1 {
 }
 ```
 A simple CSE and dead code elimination produces the following code:
-```
+```C
 block2 {
   ...
   sum1: int = add a b;
@@ -140,7 +140,7 @@ of these variables for each block. We'll use `$` to designate symbolic variables
 This gives us `a$1, b$1` for the first block and `a$2, b$2` for the second block. We assume that
 `a$1 = a$2` and `b$1 = b$2`. Then we can call our basic block symbolic interpreter with these
 variables to get the following formula:
-```
+```C
 block1
 sum1 = a$1 + b$1
 prod = (a$1 + b$1) * (a$1 + b$1)
@@ -152,7 +152,7 @@ prod = (a$2 + b$2) * (a$2 + b$2)
 ```
 Finally we check if the variables which are defined in both blocks are equivalent.
 In other words, assuming that the common live variables are equal, is the following true:
-```
+```C
 forall a$1, a$2, b$1, b$2.
 ((a$1 + b$1) = (a$2 + b$2) &&
 (a$1 + b$1) * (a$1 + b$1) = (a$2 + b$2) * (a$2 + b$2))
@@ -167,7 +167,7 @@ The downside of this approach is that it only conservatively approximates the re
 of each basic block. We may lose information about constraints on variables that cross
 basic block boundaries. For example, consider the following toy program:
 
-```
+```C
 main {
   a: int = const 2;
   b: int = const 4;
@@ -193,7 +193,7 @@ correctness bugs. We intentionally planted two bugs and found a third bug in the
 There are some subtleties to a correct implementation of LVN. If you know that the variable
 `sum1` holds the value `a + b`, you have to make sure that `sum1` is not assigned to again before
 you use it. For example, consider the following Bril program:
-```
+```C
 sum1: int = add a b;
 sum1: int = id a;
 sum2: int = add a b;
@@ -214,7 +214,7 @@ It would be nice if the compiler knew that `a + b` is equal to `b + a` so that i
 sub expressions. The most naïve thing to do is sort the arguments for all expressions when you
 compare them so that `a + b` is the same value as `b + a`. However, this by itself is not enough.
 Testing the following example with Shrimp reveals the problem:
-```
+```C
      sub1: int = sub a b;
      sub2: int = sub b a;
      prod: int = mul sub1 sub2;
@@ -228,7 +228,7 @@ bad decision to give each Bril instruction it's own structure that is a sub-type
 rather than to give `dest-instr` an op-code field. When we were looking up values in the LVN table,
 we were only comparing that fields in `dest-instr` where the same. We forgot to compare the actual
 types of the instructions! Shrimp was able to reveal this code from the following example:
-```
+```C
 sub1: int = sub a b;
 sub1: int = add a b;
 sub2: int = sub b a;

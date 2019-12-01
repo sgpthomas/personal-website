@@ -2,8 +2,11 @@
   <div class="title">
     <a href="{{url}}">{{title}}</a>
   </div>
-  {{date}}
-  {{#authors}}
-    {{.}}
-  {{/authors}}
+  <span class="authors">
+      by
+      {{#authors}}
+          <span class="comma">{{.}}</span>
+      {{/authors}}
+  </span>
+  <span class="date">{{date}}</span>
 </div>
