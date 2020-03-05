@@ -24,4 +24,4 @@ jobs:
           git pull
           make clean
           make build
-          cp build/* public/*
+          cp build/* ~/public/*
