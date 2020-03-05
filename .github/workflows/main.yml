@@ -16,7 +16,7 @@ jobs:
         script: |
           source ~/.zshrc
           cd ~/soupault
-          git pull
+          git pull -r
           dune build
           dune install
           cd ..
@@ -24,4 +24,4 @@ jobs:
           git pull
           make clean
           make build
-          cp build/* ~/public/*
+          cp build/* /home/${{ secrets.HOST }}/public/*
