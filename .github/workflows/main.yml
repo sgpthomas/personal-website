@@ -3,12 +3,13 @@ on: [push]
 jobs:
   build:
     name: Build and Deploy
-    runs-on: docker://busybox
+    runs-on: ubuntu-latest
     steps:
     - name: checkout
       uses: actions/checkout@v2
     - name: build
       run: |
+        sudo apt install glibc
         make
     - name: deploy
       uses: AEnterprise/rsync-deploy@v1.0
