@@ -9,7 +9,7 @@ jobs:
       uses: actions/checkout@v2
     - name: build
       run: |
-        sudo apt install glibc
+        sudo apt install libc-bin
         make
     - name: deploy
       uses: AEnterprise/rsync-deploy@v1.0
