@@ -7,9 +7,9 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v2
+    - name: build
       run: |
         make
-    - name: build
     - name: deploy
       uses: AEnterprise/rsync-deploy@v1.0
       env:
