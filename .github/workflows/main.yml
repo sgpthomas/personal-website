@@ -3,7 +3,7 @@ on: [push]
 jobs:
   build:
     name: Build and Deploy
-    runs-on: busybox
+    runs-on: docker://busybox
     steps:
     - name: checkout
       uses: actions/checkout@v2
