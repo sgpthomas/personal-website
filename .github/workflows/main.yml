@@ -1,27 +1,19 @@
 name: remote ssh command
 on: [push]
 jobs:
-
   build:
-    name: Build
+    name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
-        script: |
-          source ~/.zshrc
-          cd ~/soupault
-          git pull -r
-          dune build
-          dune install
-          cd ..
-          cd ~/personal-website
-          git pull
-          make clean
-          make build
-          cp build/* /home/${{ secrets.HOST }}/public/*
+    - name: build
+      run: make
+    - name: deploy
+      uses: AEnterprise/rsync-deploy@v1.0
+      env:
+        DEPLOY_KEY: ${{ secrets.SERVER_SSH_KEY }}
+        ARGS: "-e -c -r"
+        SERVER_PORT: ${{ secrets.PORT }}
+        FOLDER: "build"
+        SERVER_IP: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        SERVER_DESTINATION: ${{ secrets.SERVER_DESTINATION }}
