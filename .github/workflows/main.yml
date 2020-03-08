@@ -1,4 +1,4 @@
-name: remote ssh command
+name: build and deploy
 on: [push]
 jobs:
   build:
@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: build
-      run: make
+      uses: skx/github-action-build@release-0.6.1
     - name: deploy
       uses: AEnterprise/rsync-deploy@v1.0
       env:
