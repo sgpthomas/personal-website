@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: build
-      uses: skx/github-action-build@release-0.6.1
+      run: git clone https://github.com/sgpthomas/personal-website.git; make -C personal-website
     - name: deploy
       uses: AEnterprise/rsync-deploy@v1.0
       env:
