@@ -1,0 +1,5 @@
+name: 'Website Builder'
+description: 'Build the website'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
