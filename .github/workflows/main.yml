@@ -5,6 +5,11 @@ jobs:
     name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout 
+      uses: actions/checkout@v2
+    - name: test1
+      run: |
+        ls -al
     - name: build
       uses: './'
     - name: test
