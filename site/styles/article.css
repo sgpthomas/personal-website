@@ -2,7 +2,7 @@
   padding: 2% 0px;
 }
 
-.article a {
+.article .title a {
   /* border: 0.2px dashed red; */
   font-size: 1.3em;
 }
