@@ -1,6 +1,6 @@
 .PHONY: build open clean watch server
 
-SOUPAULT=./soupault
+SOUPAULT=soupault
 
 build:
 	$(SOUPAULT)
@@ -12,7 +12,7 @@ open: build
 	xdg-open build/index.html
 
 watch:
-	while true; do find scripts/ site/ templates/ plugins/ markdown-settings/ soupault.conf | entr -cd make build; test $? -gt 128 && break; done
+	while true; do find scripts/ site/ templates/ plugins/ markdown-settings/ soupault.conf | entr -cd make build; done
 
 server: build
 	cd build; python3 -m http.server
